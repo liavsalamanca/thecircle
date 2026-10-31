@@ -1,0 +1,641 @@
+<title>The Circle · First Lap</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The Circle / 001 · First Lap. Movimiento, música y comunidad en Bucaramanga. Preinscríbete y asegura tu lugar en la preventa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: burgundy editorial hero with an open circle, then a bone page with the form as the focal block. Single brand look by choice. */
+:root {
+  --burgundy: #541126;
+  --burgundy-deep: #3d0b1b;
+  --bone: #F5F0E6;
+  --bone-2: #ece4d6;
+  --taupe: #C6B1A2;
+  --charcoal: #242120;
+  --muted: #6b5f58;
+  --line: #d9cdbf;
+  --error: #a3271f;
+  --font-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--burgundy);
+}
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.05; }
+.eyebrow {
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--taupe); outline-offset: 3px; }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--burgundy); color: var(--bone); overflow: hidden; position: relative; }
+.nav {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding-block: 22px;
+}
+.wordmark { font-family: var(--font-display); font-size: 20px; letter-spacing: .18em; text-decoration: none; }
+.wordmark sup { font-size: 10px; letter-spacing: 0; }
+.nav-cta {
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  text-decoration: none; border-bottom: 1px solid var(--taupe); padding-bottom: 2px;
+}
+.hero-body {
+  display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center;
+  padding-block: 48px 72px;
+}
+.hero-text { min-width: 0; }
+.hero .eyebrow { color: var(--taupe); }
+.hero h1 {
+  font-size: clamp(48px, 9vw, 112px);
+  margin-top: 18px; letter-spacing: -.01em;
+}
+.hero h1 em { font-style: italic; color: var(--taupe); }
+.hero-sub { font-size: 18px; max-width: 34ch; margin: 22px 0 0; color: #eadfd2; }
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 30px;
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+}
+.hero-meta span { display: flex; align-items: center; gap: 8px; }
+.hero-meta span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--taupe); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: .06em;
+  border: 0; border-radius: 999px; padding: 16px 28px; cursor: pointer; text-decoration: none;
+  transition: transform .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-light { background: var(--bone); color: var(--burgundy); margin-top: 34px; }
+.btn-dark { background: var(--burgundy); color: var(--bone); width: 100%; }
+.btn-dark:hover { background: var(--burgundy-deep); }
+.btn[disabled] { opacity: .6; cursor: progress; transform: none; }
+
+.ring { width: 100%; max-width: 400px; justify-self: center; text-align: center; margin: 0; }
+.ring img { width: 100%; height: auto; display: block; animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { opacity: .35; transform: scale(.96); } to { opacity: 1; transform: none; } }
+.ring-label { margin: 18px 0 0; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--taupe); }
+.nav-logo { height: 46px; width: auto; display: block; }
+.foot-logo { height: 84px; width: auto; display: block; margin-bottom: 14px; }
+
+/* ---------- Manifesto ---------- */
+.manifesto { padding-block: 84px 40px; }
+.manifesto p.big {
+  font-family: var(--font-display); font-size: clamp(28px, 4.2vw, 46px); line-height: 1.2;
+  max-width: 22ch; margin: 18px 0 0;
+}
+.manifesto p.big em { color: var(--burgundy); }
+.manifesto .eyebrow, .section-head .eyebrow { color: var(--burgundy); }
+.pillars {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 54px;
+  border-top: 1px solid var(--line);
+}
+.pillar { padding: 24px 24px 24px 0; min-width: 0; }
+.pillar + .pillar { border-left: 1px solid var(--line); padding-left: 24px; }
+.pillar h3 { font-size: 30px; font-style: italic; color: var(--burgundy); }
+.pillar p { margin: 8px 0 0; color: var(--muted); }
+
+/* ---------- Morning ---------- */
+.morning { padding-block: 56px; }
+.section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; }
+.section-head h2 { font-size: clamp(34px, 5vw, 56px); margin-top: 10px; }
+.section-head p { max-width: 38ch; color: var(--muted); margin: 0; }
+.timeline { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 0; }
+.timeline li {
+  display: grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.timeline li:last-child { border-bottom: 1px solid var(--line); }
+.timeline time { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--burgundy); letter-spacing: .04em; }
+.timeline h3 { font-size: 24px; }
+.timeline p { margin: 4px 0 0; color: var(--muted); }
+.note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+/* ---------- Good ---------- */
+.good { background: var(--charcoal); color: var(--bone); }
+.good .wrap { padding-block: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.good h2 { font-size: clamp(40px, 6vw, 72px); }
+.good h2 em { color: var(--taupe); }
+.good p { color: #d8cfc5; margin: 0; max-width: 46ch; }
+.good .eyebrow { color: var(--taupe); }
+
+/* ---------- Steps ---------- */
+.how { padding-block: 72px 24px; }
+.steps { list-style: none; padding: 0; margin: 36px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; }
+.steps li { counter-increment: step; min-width: 0; padding-top: 18px; border-top: 2px solid var(--burgundy); }
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--font-display); font-size: 34px; color: var(--burgundy); display: block; line-height: 1;
+}
+.steps h3 { font-family: var(--font-body); font-weight: 600; font-size: 17px; margin-top: 14px; line-height: 1.3; }
+.steps p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.band-icon { display: inline-block; }
+
+/* ---------- Form ---------- */
+.join { padding-block: 64px 80px; }
+.join-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+.join-intro { min-width: 0; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); }
+.join-intro h2 { font-size: clamp(40px, 6vw, 64px); margin-top: 10px; }
+.join-intro h2 em { color: var(--burgundy); }
+.join-intro p { color: var(--muted); }
+.perk {
+  margin-top: 22px; padding: 18px 20px; border: 1px solid var(--burgundy); border-radius: 16px;
+  color: var(--burgundy);
+}
+.perk strong { display: block; font-family: var(--font-display); font-size: 22px; font-weight: 400; }
+.perk span { font-size: 14px; }
+
+form.card {
+  background: #fffdf8; border: 1px solid var(--line); border-radius: 24px;
+  padding: 32px; display: grid; gap: 22px; min-width: 0;
+  box-shadow: 0 30px 60px -40px rgba(84,17,38,.45);
+}
+.field { display: grid; gap: 7px; min-width: 0; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+label, legend { font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+.hint { font-size: 13px; color: var(--muted); font-weight: 400; letter-spacing: 0; }
+input[type=text], input[type=email], input[type=tel], select {
+  width: 100%; font: inherit; font-size: 16px; color: var(--charcoal);
+  background: var(--bone); border: 1px solid var(--line); border-radius: 12px;
+  padding: 13px 14px; transition: border-color .15s, background .15s;
+}
+input:focus, select:focus { outline: none; border-color: var(--burgundy); background: #fff; }
+.invalid input, .invalid select { border-color: var(--error); }
+.err { color: var(--error); font-size: 13px; min-height: 0; }
+.err:empty { display: none; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+
+.qty { display: flex; align-items: center; gap: 0; border: 1px solid var(--line); border-radius: 999px; width: max-content; background: var(--bone); }
+.qty button {
+  width: 48px; height: 48px; border: 0; background: none; font-size: 22px; color: var(--burgundy); cursor: pointer; border-radius: 50%;
+}
+.qty button:disabled { color: var(--taupe); cursor: default; }
+.qty output { min-width: 44px; text-align: center; font-family: var(--font-display); font-size: 26px; font-variant-numeric: tabular-nums; }
+.companions { display: grid; gap: 12px; }
+.companion { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; }
+.companion .num {
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--taupe); display: grid; place-content: center;
+  font-size: 13px; color: var(--burgundy); font-variant-numeric: tabular-nums;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip span {
+  display: inline-block; padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px;
+  font-size: 14px; cursor: pointer; background: var(--bone); transition: all .15s; user-select: none;
+}
+.chip input:checked + span { background: var(--burgundy); color: var(--bone); border-color: var(--burgundy); }
+.chip input:focus-visible + span { outline: 2px solid var(--taupe); outline-offset: 2px; }
+
+.check { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--charcoal); cursor: pointer; }
+.check input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--burgundy); }
+.consents { display: grid; gap: 12px; padding-top: 6px; border-top: 1px solid var(--line); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status { font-size: 14px; color: var(--error); text-align: center; }
+.form-status:empty { display: none; }
+
+.success {
+  background: var(--burgundy); color: var(--bone); border-radius: 24px; padding: 40px 32px; text-align: center;
+}
+.success h3 { font-size: 44px; font-style: italic; }
+.success p { color: #eadfd2; max-width: 40ch; margin: 14px auto 0; }
+.success .names { font-family: var(--font-display); font-size: 20px; margin-top: 18px; color: var(--bone); }
+.success .code {
+  display: inline-block; margin-top: 22px; padding: 8px 16px; border: 1px solid var(--taupe); border-radius: 999px;
+  letter-spacing: .2em; font-size: 13px; font-variant-numeric: tabular-nums;
+}
+
+/* ---------- FAQ ---------- */
+.faq { padding-block: 24px 80px; }
+.faq h2 { font-size: clamp(34px, 5vw, 52px); margin: 10px 0 28px; }
+details { border-top: 1px solid var(--line); padding: 18px 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--font-display); font-size: 26px; line-height: 1; color: var(--burgundy); transition: transform .2s; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { margin: 10px 0 0; color: var(--muted); max-width: 64ch; }
+.pay-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pay-list span { font-size: 13px; padding: 6px 12px; border-radius: 999px; background: var(--bone-2); color: var(--charcoal); }
+
+footer { background: var(--burgundy); color: var(--bone); }
+footer .wrap { padding-block: 44px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: end; }
+footer .tag { font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px); font-style: italic; }
+footer small { color: var(--taupe); letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+
+@media (max-width: 860px) {
+  .hero-body { grid-template-columns: 1fr; padding-block: 8px 56px; }
+  .ring { max-width: 260px; justify-self: center; order: -1; }
+  .nav-logo { visibility: hidden; }
+  .hero-text { text-align: center; }
+  .hero-sub { margin-inline: auto; }
+  .hero-meta { justify-content: center; }
+  .pillars { grid-template-columns: 1fr; }
+  .pillar, .pillar + .pillar { border-left: 0; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .good .wrap { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+  .join-grid { grid-template-columns: 1fr; gap: 28px; }
+  .join-intro { position: static; }
+}
+@media (max-width: 520px) {
+  .row2 { grid-template-columns: 1fr; }
+  form.card { padding: 22px 18px; border-radius: 20px; }
+  .timeline li { grid-template-columns: 1fr; gap: 4px; }
+  .steps { grid-template-columns: 1fr; }
+  .nav-cta { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ring img { animation: none; }
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav" aria-label="Principal">
+      <a href="#top" id="top" aria-label="The Circle, inicio"><img class="nav-logo" src="logo-bone.png" alt="The Circle" width="52" height="46"></a>
+      <a class="nav-cta" href="#unete">Preinscríbete</a>
+    </nav>
+    <div class="hero-body">
+      <div class="hero-text">
+        <p class="eyebrow">The Circle / 001 · First Lap</p>
+        <h1>Move for <em>good.</em></h1>
+        <p class="hero-sub">Movimiento, música y nuevas conexiones. No importa tu ritmo, aquí hay un lugar para ti.</p>
+        <div class="hero-meta">
+          <span>Bucaramanga</span>
+          <span>Un domingo en la mañana</span>
+          <span>Fecha por anunciar</span>
+        </div>
+        <a class="btn btn-light" href="#unete">Quiero mi lugar</a>
+      </div>
+      <div class="ring">
+        <img src="logo-bone.png" alt="The Circle" width="520" height="458">
+        <p class="ring-label">001 · First Lap</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="manifesto wrap" aria-labelledby="m-title">
+    <p class="eyebrow" id="m-title">Move · Connect · Belong</p>
+    <p class="big">No tienes que ser atleta, llegar acompañada ni conocer a nadie. <em>Come as you are.</em> Leave feeling connected.</p>
+    <div class="pillars">
+      <div class="pillar"><h3>Move</h3><p>Corre unos 5K o camina una ruta corta. Tú eliges el ritmo.</p></div>
+      <div class="pillar"><h3>Connect</h3><p>DJ en vivo, café y gente nueva después del movimiento.</p></div>
+      <div class="pillar"><h3>Belong</h3><p>Una comunidad a la que vas a querer volver cada domingo.</p></div>
+    </div>
+  </section>
+
+  <section class="morning wrap" aria-labelledby="t-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">La mañana</p>
+        <h2 id="t-title">Tu domingo empieza aquí</h2>
+      </div>
+      <p>Así pensamos la primera experiencia. Horarios y punto de encuentro se confirman con la fecha.</p>
+    </div>
+    <ol class="timeline">
+      <li><time>6:30 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
+      <li><time>7:00 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
+      <li><time>7:20 a. m.</time><div><h3>The Movement</h3><p>Dos grupos: correr cerca de 5K o caminar una ruta corta.</p></div></li>
+      <li><time>8:15 a. m.</time><div><h3>The Social Session</h3><p>DJ en vivo, café, fotos y estaciones de aliados.</p></div></li>
+      <li><time>9:45 a. m.</time><div><h3>The Last Song</h3><p>Cierre musical, foto de comunidad y anuncio del próximo encuentro.</p></div></li>
+    </ol>
+    <p class="note">Programa tentativo, sujeto a permisos y confirmación del lugar.</p>
+  </section>
+
+  <section class="good" aria-labelledby="g-title">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Move for Good</p>
+        <h2 id="g-title">Cada vuelta <em>suma.</em></h2>
+      </div>
+      <p>El primer encuentro tendrá una causa solidaria. Podrás traer una donación voluntaria y, al final, publicaremos lo que recogimos entre todos y a quién llegó. Muy pronto te contamos la fundación aliada.</p>
+    </div>
+  </section>
+
+  <section class="how wrap" aria-labelledby="h-title">
+    <p class="eyebrow" style="color:var(--burgundy)">Cómo funciona</p>
+    <h2 id="h-title" style="font-size:clamp(34px,5vw,56px);margin-top:10px">Sin tiquetes. Tu nombre es tu entrada.</h2>
+    <ol class="steps">
+      <li><h3>Te preinscribes</h3><p>Tú y tus acompañantes, con el nombre de cada uno.</p></li>
+      <li><h3>Te avisamos primero</h3><p>Cuando abra la preventa, te escribimos por WhatsApp antes que a nadie.</p></li>
+      <li><h3>Pagas como prefieras</h3><p>Transferencia, billeteras digitales o tarjeta.</p></li>
+      <li><h3>Recibes tu manilla</h3><p>El día del evento dices tu nombre en el check-in y listo.</p></li>
+    </ol>
+  </section>
+
+  <section class="join wrap" id="unete" aria-labelledby="j-title">
+    <div class="join-grid">
+      <div class="join-intro">
+        <p class="eyebrow" style="color:var(--burgundy)">Preinscripción</p>
+        <h2 id="j-title">Entra al <em>círculo.</em></h2>
+        <p>Preinscribirte no tiene costo ni te compromete a pagar. Solo nos ayuda a saber cuántos vamos a ser y a guardarte un lugar.</p>
+        <div class="perk">
+          <strong>Founding Circle</strong>
+          <span>Las personas preinscritas tienen acceso primero a la preventa y al precio Early Circle.</span>
+        </div>
+      </div>
+
+      <div id="formArea">
+        <form class="card" id="joinForm" novalidate>
+          <div class="hp" aria-hidden="true">
+            <label for="website">No llenar</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field" data-f="nombre">
+            <label for="nombre">Tu nombre completo</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" placeholder="Como aparecerá en el check-in">
+            <div class="err"></div>
+          </div>
+
+          <div class="row2">
+            <div class="field" data-f="whatsapp">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="300 123 4567">
+              <div class="err"></div>
+            </div>
+            <div class="field" data-f="correo">
+              <label for="correo">Correo</label>
+              <input type="email" id="correo" name="correo" autocomplete="email" maxlength="120" placeholder="tu@correo.com">
+              <div class="err"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label id="qtyLabel">¿Cuántas personas vienen? <span class="hint">contándote a ti</span></label>
+            <div class="qty" role="group" aria-labelledby="qtyLabel">
+              <button type="button" id="qtyMinus" aria-label="Quitar una persona">−</button>
+              <output id="qty" aria-live="polite">1</output>
+              <button type="button" id="qtyPlus" aria-label="Agregar una persona">+</button>
+            </div>
+          </div>
+
+          <div class="field" id="compField" hidden data-f="acompanantes">
+            <label>Nombre de cada acompañante <span class="hint">así los encontramos en la lista para entregarles su manilla</span></label>
+            <div class="companions" id="companions"></div>
+            <div class="err"></div>
+          </div>
+
+          <fieldset class="field" data-f="modalidad">
+            <legend>¿Cómo te quieres mover?</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="modalidad" value="Correr 5K"><span>Correr ~5K</span></label>
+              <label class="chip"><input type="radio" name="modalidad" value="Caminar"><span>Caminar</span></label>
+              <label class="chip"><input type="radio" name="modalidad" value="Aún no sé"><span>Aún no sé</span></label>
+            </div>
+            <div class="err"></div>
+          </fieldset>
+
+          <fieldset class="field" data-f="pago">
+            <legend>¿Cómo prefieres pagar cuando abra la preventa? <span class="hint">puedes marcar varias</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="pago" value="Nequi"><span>Nequi</span></label>
+              <label class="chip"><input type="checkbox" name="pago" value="Daviplata"><span>Daviplata</span></label>
+              <label class="chip"><input type="checkbox" name="pago" value="Bancolombia"><span>Bancolombia</span></label>
+              <label class="chip"><input type="checkbox" name="pago" value="Llave Bre-B"><span>Llave Bre-B</span></label>
+              <label class="chip"><input type="checkbox" name="pago" value="Mercado Pago"><span>Mercado Pago</span></label>
+              <label class="chip"><input type="checkbox" name="pago" value="Tarjeta"><span>Tarjeta de crédito o débito</span></label>
+            </div>
+            <div class="err"></div>
+          </fieldset>
+
+          <div class="field">
+            <label for="fuente">¿Cómo te enteraste? <span class="hint">opcional</span></label>
+            <select id="fuente" name="fuente">
+              <option value="">Elige una opción</option>
+              <option>Instagram</option>
+              <option>TikTok</option>
+              <option>Me lo contó una amiga o amigo</option>
+              <option>WhatsApp</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <div class="consents">
+            <div class="field" data-f="datos">
+              <label class="check"><input type="checkbox" id="datos" name="datos"><span>Autorizo el tratamiento de mis datos y los de mis acompañantes solo para gestionar la inscripción y el ingreso al evento.</span></label>
+              <div class="err"></div>
+            </div>
+            <label class="check"><input type="checkbox" id="novedades" name="novedades"><span>Quiero recibir novedades de próximos encuentros de The Circle. <span class="hint">opcional</span></span></label>
+          </div>
+
+          <button class="btn btn-dark" type="submit" id="submitBtn">Preinscribirme</button>
+          <p class="form-status" id="formStatus" role="alert"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq wrap" aria-labelledby="f-title">
+    <p class="eyebrow" style="color:var(--burgundy)">Preguntas</p>
+    <h2 id="f-title">Antes de que preguntes</h2>
+    <details>
+      <summary>¿Preinscribirme significa que ya pagué?</summary>
+      <p>No. Es gratis y no te compromete. Cuando abra la preventa te escribimos por WhatsApp con el precio, la fecha, el lugar y los medios de pago.</p>
+    </details>
+    <details>
+      <summary>¿Cómo pago?</summary>
+      <p>Cuando abramos la preventa podrás pagar por cualquiera de estos medios:</p>
+      <div class="pay-list"><span>Nequi</span><span>Daviplata</span><span>Bancolombia</span><span>Llave Bre-B</span><span>Mercado Pago</span><span>Tarjeta</span></div>
+    </details>
+    <details>
+      <summary>¿Cómo entro el día del evento?</summary>
+      <p>No necesitas tiquete impreso ni QR. Llegas al check-in, dices tu nombre y te entregamos tu manilla. Si compraste para otras personas, cada una entra con su propio nombre.</p>
+    </details>
+    <details>
+      <summary>No corro. ¿Igual puedo ir?</summary>
+      <p>Claro. Habrá un grupo de caminata y la parte social es para todos. Aquí nadie compite.</p>
+    </details>
+    <details>
+      <summary>¿Puedo ir sola o solo?</summary>
+      <p>Esa es justamente la idea. Muchas personas van a llegar sin conocer a nadie, y vamos a tener dinámicas para que conectes a tu ritmo.</p>
+    </details>
+    <details>
+      <summary>¿Cuándo y dónde es?</summary>
+      <p>Un domingo en la mañana en Bucaramanga. Anunciamos la fecha y el punto de encuentro primero a las personas preinscritas.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><img class="foot-logo" src="logo-bone.png" alt="The Circle" width="95" height="84"><p class="tag" style="margin:0">Come as you are.</p></div>
+    <small>The Circle · Bucaramanga · Wellness, movement &amp; community</small>
+  </div>
+</footer>
+
+<script>
+/* ========= CONFIG =========
+   Pega aquí la URL de tu Apps Script (termina en /exec); el script guarda cada registro en Notion.
+   Mientras esté vacía, el formulario funciona en modo demostración y no guarda nada. */
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzJRqpZCvw_A7b0XVCMYspzAdABNkMLVldtmqR8ixmlJtmTeb8veOHYN8UY8prPB6WtTg/exec";
+const MAX_PEOPLE = 6;
+/* ========================== */
+
+(function () {
+  const form = document.getElementById("joinForm");
+  const qtyOut = document.getElementById("qty");
+  const minus = document.getElementById("qtyMinus");
+  const plus = document.getElementById("qtyPlus");
+  const compField = document.getElementById("compField");
+  const compList = document.getElementById("companions");
+  const status = document.getElementById("formStatus");
+  const submitBtn = document.getElementById("submitBtn");
+  let qty = 1;
+
+  function renderCompanions() {
+    const prev = [...compList.querySelectorAll("input")].map(i => i.value);
+    compList.innerHTML = "";
+    for (let i = 0; i < qty - 1; i++) {
+      const row = document.createElement("div");
+      row.className = "companion";
+      const num = document.createElement("span");
+      num.className = "num"; num.textContent = i + 2;
+      const inp = document.createElement("input");
+      inp.type = "text"; inp.id = "acomp" + (i + 1); inp.maxLength = 80;
+      inp.placeholder = "Nombre completo del acompañante " + (i + 1);
+      inp.setAttribute("aria-label", "Acompañante " + (i + 1));
+      inp.value = prev[i] || "";
+      row.append(num, inp);
+      compList.append(row);
+    }
+    compField.hidden = qty < 2;
+    qtyOut.textContent = qty;
+    minus.disabled = qty <= 1;
+    plus.disabled = qty >= MAX_PEOPLE;
+  }
+  minus.addEventListener("click", () => { if (qty > 1) { qty--; renderCompanions(); } });
+  plus.addEventListener("click", () => { if (qty < MAX_PEOPLE) { qty++; renderCompanions(); } });
+  renderCompanions();
+
+  function setErr(key, msg) {
+    const f = form.querySelector('[data-f="' + key + '"]');
+    if (!f) return;
+    f.classList.toggle("invalid", !!msg);
+    f.querySelector(".err").textContent = msg || "";
+  }
+  const clean = s => s.replace(/\s+/g, " ").trim();
+
+  function collect() {
+    const fd = new FormData(form);
+    return {
+      nombre: clean(fd.get("nombre") || ""),
+      whatsapp: (fd.get("whatsapp") || "").replace(/[^\d+]/g, ""),
+      correo: clean(fd.get("correo") || "").toLowerCase(),
+      cantidad: qty,
+      acompanantes: [...compList.querySelectorAll("input")].map(i => clean(i.value)),
+      modalidad: fd.get("modalidad") || "",
+      pago: fd.getAll("pago"),
+      fuente: fd.get("fuente") || "",
+      datos: !!fd.get("datos"),
+      novedades: !!fd.get("novedades"),
+      website: fd.get("website") || ""
+    };
+  }
+
+  function validate(d) {
+    let ok = true;
+    const check = (key, cond, msg) => { setErr(key, cond ? "" : msg); if (!cond) ok = false; };
+    check("nombre", d.nombre.split(" ").length >= 2, "Escribe tu nombre y apellido.");
+    const digits = d.whatsapp.replace(/\D/g, "");
+    check("whatsapp", digits.length >= 10 && digits.length <= 13, "Escribe un número de WhatsApp válido, por ejemplo 300 123 4567.");
+    check("correo", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.correo), "Revisa el correo, parece incompleto.");
+    check("acompanantes", d.acompanantes.every(n => n.length >= 3), "Escribe el nombre de cada acompañante.");
+    check("modalidad", !!d.modalidad, "Elige cómo te quieres mover.");
+    check("pago", d.pago.length > 0, "Elige al menos un medio de pago.");
+    check("datos", d.datos, "Necesitamos tu autorización para guardar la inscripción.");
+    if (!ok) {
+      const first = form.querySelector(".invalid input, .invalid");
+      if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    return ok;
+  }
+
+  function makeCode() {
+    const c = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    let s = "TC-";
+    for (let i = 0; i < 5; i++) s += c[Math.floor(Math.random() * c.length)];
+    return s;
+  }
+
+  function showSuccess(d, code, demo) {
+    const area = document.getElementById("formArea");
+    const box = document.createElement("div");
+    box.className = "success"; box.setAttribute("role", "status");
+    const h = document.createElement("h3"); h.textContent = "You belong here.";
+    const p = document.createElement("p");
+    const first = d.nombre.split(" ")[0];
+    p.textContent = first + ", ya estás en la lista. Te escribiremos por WhatsApp apenas abra la preventa" + (d.cantidad > 1 ? " para ti y tus acompañantes." : ".");
+    box.append(h, p);
+    if (d.cantidad > 1) {
+      const n = document.createElement("p"); n.className = "names";
+      n.textContent = [d.nombre, ...d.acompanantes].join(" · ");
+      box.append(n);
+    }
+    const k = document.createElement("span"); k.className = "code"; k.textContent = "Código " + code;
+    box.append(k);
+    if (demo) {
+      const dm = document.createElement("p");
+      dm.style.fontSize = "13px";
+      dm.textContent = "Vista de demostración: esta inscripción no se guardó.";
+      box.append(dm);
+    }
+    area.replaceChildren(box);
+    area.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    status.textContent = "";
+    const d = collect();
+    if (d.website) return; // bot
+    if (!validate(d)) return;
+    const code = makeCode();
+    const payload = { ...d, codigo: code, pago: d.pago.join(", ") };
+
+    if (!SHEET_URL) { showSuccess(d, code, true); return; }
+
+    submitBtn.disabled = true; submitBtn.textContent = "Guardando tu lugar…";
+    try {
+      const res = await fetch(SHEET_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+      const out = await res.json();
+      if (!out.ok) throw new Error(out.error || "error");
+      showSuccess(d, out.codigo || code, false);
+    } catch (err) {
+      status.textContent = "No pudimos guardar tu preinscripción. Revisa tu conexión e inténtalo de nuevo; si sigue fallando, escríbenos por Instagram.";
+      submitBtn.disabled = false; submitBtn.textContent = "Preinscribirme";
+    }
+  });
+
+  form.addEventListener("input", (e) => {
+    const f = e.target.closest("[data-f]");
+    if (f && f.classList.contains("invalid")) { f.classList.remove("invalid"); f.querySelector(".err").textContent = ""; }
+  });
+})();
+</script>
