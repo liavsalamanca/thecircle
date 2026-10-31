@@ -223,20 +223,24 @@ a { color: inherit; }
 .how h2 em { color: var(--burgundy); }
 .steps { list-style: none; padding: 0; margin: 56px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
 .steps li {
-  counter-increment: step; min-width: 0; padding: 30px 26px; border-radius: 22px; background: var(--paper); border: 1px solid var(--line);
+  counter-increment: step; min-width: 0; padding: 30px 26px; border-radius: 22px; color: var(--bone);
+  position: relative; overflow: hidden; border: 1px solid rgba(245,240,230,.12);
   transition: transform .45s var(--ease), box-shadow .45s var(--ease);
 }
-.steps li:hover { transform: translateY(-8px) rotate(-.6deg); box-shadow: 0 30px 50px -34px rgba(84,17,38,.6); }
+.steps li:nth-child(1) { background: linear-gradient(150deg, #a8737f 0%, #7a2e45 100%); }
+.steps li:nth-child(2) { background: linear-gradient(150deg, #8e4a5d 0%, #66182f 100%); }
+.steps li:nth-child(3) { background: linear-gradient(150deg, #74283f 0%, #541126 100%); }
+.steps li:nth-child(4) { background: linear-gradient(150deg, #5e1530 0%, #2e0813 100%); }
+.steps li::after { content: ""; position: absolute; right: -50px; bottom: -50px; width: 150px; height: 150px; border-radius: 50%; border: 1.5px solid rgba(245,240,230,.25); transition: transform .6s var(--ease); }
+.steps li:hover { transform: translateY(-8px) rotate(-.6deg); box-shadow: 0 30px 50px -28px rgba(84,17,38,.75); }
+.steps li:hover::after { transform: scale(1.4); }
 .steps li::before {
   content: counter(step, decimal-leading-zero); display: grid; place-content: center;
-  width: 64px; height: 64px; border-radius: 50%; border: 1.5px solid var(--burgundy);
-  font-family: var(--font-display); font-variation-settings: "opsz" 28; font-weight: 500; font-size: 24px; color: var(--burgundy);
+  width: 64px; height: 64px; border-radius: 50%; border: 1.5px solid rgba(245,240,230,.6);
+  font-family: var(--font-display); font-variation-settings: "opsz" 28; font-weight: 500; font-size: 24px; color: var(--bone);
 }
-.steps li:last-child { background: var(--burgundy); color: var(--bone); border-color: var(--burgundy); }
-.steps li:last-child::before { border-color: var(--taupe); color: var(--bone); }
-.steps li:last-child p { color: #eadfd2; }
 .steps h3 { font-family: var(--font-body); font-variation-settings: normal; font-weight: 700; font-size: 21px; margin-top: 22px; line-height: 1.25; letter-spacing: 0; }
-.steps p { margin: 8px 0 0; color: var(--muted); font-size: 17px; }
+.steps p { margin: 8px 0 0; color: #f0e4d8; font-size: 17px; }
 
 /* ---------- Form ---------- */
 .join { padding-block: 70px 110px; }
@@ -553,11 +557,11 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
       <p class="note">Programa tentativo. Horarios y punto de encuentro se confirman con la fecha.</p>
     </div>
     <ol class="timeline">
-      <li class="reveal"><time>6:30 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
-      <li class="reveal"><time>7:00 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
-      <li class="reveal"><time>7:20 a. m.</time><div><h3>The Movement</h3><p>Dos grupos: correr cerca de 5K o caminar una ruta corta.</p></div></li>
-      <li class="reveal"><time>8:15 a. m.</time><div><h3>The Social Session</h3><p>DJ en vivo, café, fotos y estaciones de aliados.</p></div></li>
-      <li class="reveal"><time>9:45 a. m.</time><div><h3>The Last Song</h3><p>Cierre musical, foto de comunidad y anuncio del próximo encuentro.</p></div></li>
+      <li class="reveal"><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
+      <li class="reveal"><time>7:30 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
+      <li class="reveal"><time>7:50 a. m.</time><div><h3>The Movement</h3><p>Dos grupos: correr cerca de 5K o caminar una ruta corta.</p></div></li>
+      <li class="reveal"><time>8:45 a. m.</time><div><h3>The Social Session</h3><p>DJ en vivo, café, fotos y estaciones de aliados.</p></div></li>
+      <li class="reveal"><time>10:15 a. m.</time><div><h3>The Last Song</h3><p>Cierre musical, foto de comunidad y anuncio del próximo encuentro.</p></div></li>
     </ol>
   </section>
 
