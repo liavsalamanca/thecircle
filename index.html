@@ -1,3 +1,13 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="logo-bone.png">
+<link rel="apple-touch-icon" href="logo-bone.png">
+<meta property="og:title" content="The Circle · First Lap">
+<meta property="og:description" content="Move for good. Movimiento, música y nuevas conexiones en Bucaramanga. Preinscríbete.">
+<meta property="og:image" content="logo-bone.png">
 <title>The Circle · First Lap</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="The Circle / 001 · First Lap. Movimiento, música y comunidad en Bucaramanga. Preinscríbete y asegura tu lugar en la preventa.">
@@ -481,11 +491,91 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
   .cbtn { justify-content: center; width: 100%; }
 }
 
+/* ---------- Fixes generales ---------- */
+[hidden] { display: none !important; }
+a, button, label, summary { -webkit-tap-highlight-color: transparent; }
+.pillar > *, .steps li > *, .contact > *, .perk > * { position: relative; z-index: 1; }
+img { max-width: 100%; }
+@media (hover: none) {
+  .pillar:hover, .steps li:hover, .timeline li:hover, .btn:hover, .cbtn:hover { transform: none; }
+  .pillar:hover { background: var(--paper); color: inherit; box-shadow: none; }
+  .pillar:hover h3 { color: var(--burgundy); }
+  .pillar:hover p { color: var(--muted); }
+}
+
+/* ---------- Celular: tamaños grandes y legibles ---------- */
+@media (max-width: 640px) {
+  body { font-size: 19px; line-height: 1.6; }
+  .eyebrow { font-size: 14px; letter-spacing: .18em; }
+  .greet { display: block; }
+  .greet::before { display: none; }
+  .nav-cta { font-size: 14px; padding: 11px 18px; }
+  .hero h1 { font-size: clamp(64px, 19vw, 88px); }
+  .hero-sub { font-size: 21px; }
+  .welcome { font-size: 24px; }
+  .hero-meta span { font-size: 14px; padding: 9px 15px; }
+  .scroll-cue { display: none; }
+  .manifesto .big { font-size: 40px; }
+  .manifesto .lead { font-size: 20px; }
+  .pillar h3 { font-size: 40px; }
+  .pillar p { font-size: 19px; }
+  .morning-head h2, .faq h2, .how h2 { font-size: 50px; }
+  .morning-head p { font-size: 19px; }
+  .note { font-size: 16px; }
+  .timeline time { font-size: 18px; }
+  .timeline h3 { font-size: 30px; }
+  .timeline p { font-size: 18px; }
+  .good h2 { font-size: 68px; }
+  .good p { font-size: 20px; }
+  .steps { grid-auto-columns: 86%; }
+  .steps h3 { font-size: 23px; }
+  .steps p { font-size: 18px; }
+  .swipe { font-size: 16px; }
+  .join-intro h2 { font-size: 60px; }
+  .join-intro > p { font-size: 20px; }
+  .perk strong { font-size: 32px; }
+  .perk span { font-size: 18px; }
+  .counter { font-size: 17px; }
+  .form-head { flex-wrap: wrap; }
+  .form-head span { font-size: 15px; }
+  label, legend { font-size: 18px; }
+  .hint { font-size: 16px; display: block; margin-top: 2px; }
+  .check .hint { display: inline; }
+  input[type=text], input[type=email], input[type=tel], select { font-size: 19px; padding: 17px 16px; }
+  .chip span { font-size: 18px; padding: 13px 18px; }
+  .check { font-size: 17px; }
+  .check input { width: 26px; height: 26px; }
+  .err { font-size: 16px; }
+  .btn-dark { font-size: 19px; padding: 20px; }
+  summary { font-size: 19px; }
+  details p { font-size: 18px; }
+  .pay-list span { font-size: 16px; }
+  .contact h3 { font-size: 34px; }
+  .contact p { font-size: 19px; }
+  .cbtn { font-size: 18px; padding: 17px 22px; }
+  .track span { font-size: 30px; }
+  .success h3 { font-size: 46px; }
+  .success p { font-size: 19px; }
+  footer .tag { font-size: 48px; }
+  footer small { font-size: 14px; }
+  .sticky-cta .btn { font-size: 18px; }
+}
+@media (max-width: 360px) {
+  .hero h1 { font-size: 58px; }
+  .manifesto .big { font-size: 34px; }
+  .morning-head h2, .faq h2, .how h2, .join-intro h2 { font-size: 44px; }
+  .good h2 { font-size: 56px; }
+  .sticky-icons a { width: 52px; height: 52px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
 </style>
+</head>
+<body>
+
 
 <header class="hero" id="top">
   <div class="glow g1" aria-hidden="true"></div>
@@ -559,9 +649,9 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
     <ol class="timeline">
       <li class="reveal"><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
       <li class="reveal"><time>7:30 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
-      <li class="reveal"><time>7:50 a. m.</time><div><h3>The Movement</h3><p>Dos grupos: correr cerca de 5K o caminar una ruta corta.</p></div></li>
-      <li class="reveal"><time>8:45 a. m.</time><div><h3>The Social Session</h3><p>DJ en vivo, café, fotos y estaciones de aliados.</p></div></li>
-      <li class="reveal"><time>10:15 a. m.</time><div><h3>The Last Song</h3><p>Cierre musical, foto de comunidad y anuncio del próximo encuentro.</p></div></li>
+      <li class="reveal"><time>7:50 a. m.</time><div><h3>The Movement</h3><p>Dos grupos: correr cerca de 5K o caminar una ruta corta. Llegamos todos de vuelta al punto de encuentro a las 9:00.</p></div></li>
+      <li class="reveal"><time>9:00 a. m.</time><div><h3>The Social Session</h3><p>Hora y media de DJ en vivo, café, fotos y estaciones de aliados.</p></div></li>
+      <li class="reveal"><time>10:30 a. m.</time><div><h3>The Last Song</h3><p>Cierre musical, foto de comunidad y anuncio del próximo encuentro.</p></div></li>
     </ol>
   </section>
 
@@ -589,7 +679,7 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
 
   <section class="join wrap" id="unete" aria-labelledby="j-title">
     <div class="join-grid">
-      <div class="join-intro reveal-l">
+      <div class="join-intro">
         <p class="eyebrow b">Preinscripción</p>
         <h2 id="j-title">Entra al <em>círculo.</em></h2>
         <p>Preinscribirte no tiene costo ni te compromete a pagar. Nos ayuda a saber cuántos vamos a ser y te guarda un lugar.</p>
@@ -601,7 +691,7 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
       </div>
 
       <div id="formArea">
-        <form class="card reveal" id="joinForm" novalidate>
+        <form class="card" id="joinForm" novalidate>
           <div class="form-head"><h3>Tu lugar</h3><span>Toma 1 minuto</span></div>
           <div class="hp" aria-hidden="true">
             <label for="website">No llenar</label>
@@ -610,7 +700,7 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
 
           <div class="field" data-f="nombre">
             <label for="nombre">Tu nombre completo</label>
-            <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" placeholder="Como aparecerá en el check-in">
+            <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" placeholder="Nombre y apellido">
             <div class="err"></div>
           </div>
 
@@ -985,3 +1075,6 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
   });
 })();
 </script>
+
+</body>
+</html>
