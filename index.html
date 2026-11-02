@@ -497,28 +497,47 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
 .network h2 { font-size: clamp(42px, 5vw, 72px); margin-top: 14px; }
 .network h2 em { color: var(--burgundy); }
 .network-head p { color: var(--muted); font-size: 20px; margin: 22px 0 0; max-width: 46ch; }
-.network-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; min-width: 0; }
-.network-list li {
-  display: grid; grid-template-columns: 52px 1fr; column-gap: 18px; align-items: start;
-  padding: 24px; border-radius: 22px; background: var(--paper); border: 1px solid var(--line);
+.network-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-width: 0; }
+.ncard {
+  position: relative; overflow: hidden; display: grid; align-content: start; gap: 10px; min-width: 0;
+  padding: 28px; border-radius: 28px; isolation: isolate;
+  background: linear-gradient(160deg, rgba(255,252,246,.9), rgba(236,227,211,.7));
+  border: 1px solid rgba(84,17,38,.12);
+  box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 24px 48px -36px rgba(84,17,38,.45);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
 }
-.network-list li::before {
-  content: ""; grid-row: span 2; width: 52px; height: 52px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #8e4a5d, var(--burgundy)); box-shadow: inset 0 0 0 6px rgba(245,240,230,.18);
+.ncard::after {
+  content: ""; position: absolute; z-index: -1; width: 220px; height: 220px; right: -90px; top: -90px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(198,177,162,.55), transparent 70%); transition: transform .6s var(--ease);
 }
-.network-list li:nth-child(2)::before { background: radial-gradient(circle at 35% 35%, #a8737f, #66182f); }
-.network-list li:nth-child(3)::before { background: radial-gradient(circle at 35% 35%, var(--taupe), #74283f); }
-.network-list b { font-size: 21px; }
-.network-list span { color: var(--muted); font-size: 18px; margin-top: 4px; }
+.ncard:first-child {
+  grid-column: 1 / -1; color: var(--bone); border-color: transparent;
+  background: linear-gradient(135deg, #7a2e45 0%, var(--burgundy) 55%, #2e0813 100%);
+}
+.ncard:first-child::after { background: radial-gradient(circle, rgba(245,240,230,.22), transparent 70%); }
+.ncard:first-child span { color: #eadfd2; }
+.ni {
+  width: 54px; height: 54px; border-radius: 18px; display: grid; place-content: center; margin-bottom: 8px;
+  background: var(--burgundy); color: var(--bone); box-shadow: 0 12px 24px -12px rgba(84,17,38,.7);
+}
+.ni svg { width: 28px; height: 28px; }
+.ncard span.ni, .ncard:first-child span.ni { color: var(--bone); max-width: none; }
+.ncard:first-child .ni { background: rgba(245,240,230,.14); border: 1px solid rgba(245,240,230,.3); backdrop-filter: blur(6px); }
+.ncard b { font-family: var(--font-display); font-variation-settings: "opsz" 28; font-weight: 500; font-size: 30px; line-height: 1.1; }
+.ncard span { color: var(--muted); font-size: 18px; max-width: 40ch; }
+@media (hover: hover) {
+  .ncard:hover { transform: translateY(-6px); box-shadow: 0 34px 60px -34px rgba(84,17,38,.6); }
+  .ncard:hover::after { transform: scale(1.5); }
+}
 @media (max-width: 1000px) { .network { grid-template-columns: 1fr; gap: 36px; } }
 @media (max-width: 640px) {
   .network { padding-block: 10px 80px; }
   .network h2 { font-size: 50px; }
   .network-head p { font-size: 20px; }
-  .network-list li { grid-template-columns: 44px 1fr; column-gap: 14px; padding: 20px; }
-  .network-list li::before { width: 44px; height: 44px; }
-  .network-list b { font-size: 21px; }
-  .network-list span { font-size: 18px; }
+  .network-list { grid-template-columns: 1fr; gap: 12px; }
+  .ncard { padding: 24px 22px; border-radius: 24px; }
+  .ncard b { font-size: 28px; }
+  .ncard span { font-size: 18px; }
 }
 
 /* ---------- Fixes generales ---------- */
@@ -650,8 +669,8 @@ img { max-width: 100%; }
 
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>Coffee &amp; healthy drinks</span>
-    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>Coffee &amp; healthy drinks</span>
+    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>First Lap</span>
+    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>First Lap</span>
   </div>
 </div>
 
@@ -663,8 +682,8 @@ img { max-width: 100%; }
       <p class="lead">The Circle es una comunidad que se reúne a moverse, escuchar buena música y conocer gente nueva. Llegas por el plan y te quedas por la gente.</p>
     </div>
     <div class="pillars">
-      <div class="pillar reveal"><h3>Move</h3><p>5K en un solo grupo y con la misma música. Tú eliges el ritmo y nosotros te acompañamos.</p></div>
-      <div class="pillar reveal"><h3>Connect</h3><p>DJ en vivo, café, healthy drinks y gente nueva después del movimiento.</p></div>
+      <div class="pillar reveal"><h3>Move</h3><p>5K en un solo grupo. Tú eliges el ritmo.</p></div>
+      <div class="pillar reveal"><h3>Connect</h3><p>DJ en vivo, café, healthy drinks y networking con gente que se mueve como tú.</p></div>
       <div class="pillar reveal"><h3>Belong</h3><p>Una comunidad a la que vas a querer volver, aunque la actividad cambie.</p></div>
     </div>
   </section>
@@ -679,7 +698,7 @@ img { max-width: 100%; }
     <ol class="timeline">
       <li class="reveal"><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
       <li class="reveal"><time>7:30 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
-      <li class="reveal"><time>7:50 a. m.</time><div><h3>The Movement</h3><p>5K en un solo grupo y con la misma música. Cada quien va a su ritmo y nuestro equipo acompaña el recorrido para que nadie se quede atrás ni solo. Volvemos juntos al punto de encuentro a las 9:00.</p></div></li>
+      <li class="reveal"><time>7:50 a. m.</time><div><h3>The Movement</h3><p>5K en un solo grupo. Cada quien va a su ritmo y nuestro equipo acompaña el recorrido para que nadie se quede atrás. Volvemos juntos al punto de encuentro a las 9:00 a. m.</p></div></li>
       <li class="reveal"><time>9:00 a. m.</time><div><h3>The Social Session</h3><p>Hora y media de Coffee &amp; Healthy Drinks Party: DJ en vivo, café, bebidas saludables, fotos y estaciones de aliados.</p></div></li>
       <li class="reveal"><time>10:30 a. m.</time><div><h3>The Last Song</h3><p>Cierre musical, foto de comunidad y anuncio del próximo encuentro.</p></div></li>
     </ol>
@@ -689,13 +708,13 @@ img { max-width: 100%; }
   <section class="network wrap" aria-labelledby="n-title">
     <div class="network-head reveal-l">
       <p class="eyebrow b">Más que un plan de domingo</p>
-      <h2 id="n-title">Aquí encuentras <em>a tu gente.</em></h2>
-      <p>Si llegaste a The Circle es porque algo más te mueve: ganas de cuidarte, de crecer y de rodearte de gente con buena energía. Vas a conocer personas a las que les gusta lo mismo que a ti. Llegas por el plan y te vas con nuevos amigos, contactos y compañeros para entrenar.</p>
+      <h2 id="n-title">Rodéate de gente <em>que te mueve.</em></h2>
+      <p>Si llegaste a The Circle es porque algo más te mueve: ganas de cuidarte, de crecer y de rodearte de gente con buena energía. Vas a conocer personas a las que les gusta lo mismo que a ti. Aquí una conversación puede convertirse en una amistad, una colaboración o tu próximo plan de domingo.</p>
     </div>
     <ul class="network-list">
-      <li class="reveal"><b>Intereses en común</b><span>Gente que madruga un domingo para moverse, igual que tú.</span></li>
-      <li class="reveal"><b>Networking sin corbata</b><span>Emprendedores, creativos y profesionales que se conocen corriendo y conversan con un café.</span></li>
-      <li class="reveal"><b>Conexiones que siguen</b><span>Lo que empieza en el círculo continúa en el próximo encuentro.</span></li>
+      <li class="ncard reveal"><span class="ni" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/></svg></span><b>Tu misma energía</b><span>Personas que eligen empezar la semana moviéndose y con buena actitud, igual que tú.</span></li>
+      <li class="ncard reveal"><span class="ni" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h11a3 3 0 0 1 3 3V13a3 3 0 0 1-3 3H10l-4 3v-3H4z"/><path d="M18 9.5h1a1.5 1.5 0 0 1 1.5 1.5v6.5l-2.5-2"/></svg></span><b>Conversaciones que suman</b><span>Entre café y healthy drinks conoces gente con ideas, proyectos y oportunidades para compartir.</span></li>
+      <li class="ncard reveal"><span class="ni" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 0 1 14.6-5.9L20.5 8.5"/><path d="M20.5 4v4.5H16"/><path d="M20.5 12a8.5 8.5 0 0 1-14.6 5.9L3.5 15.5"/><path d="M3.5 20v-4.5H8"/></svg></span><b>Conexiones que siguen</b><span>Lo que empieza en The Circle continúa en el próximo encuentro.</span></li>
     </ul>
   </section>
 
@@ -743,8 +762,8 @@ img { max-width: 100%; }
           </div>
 
           <div class="field" data-f="nombre">
-            <label for="nombre">Tu nombre completo</label>
-            <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" placeholder="Nombre y apellido">
+            <label for="nombre">Tu nombre completo <span class="hint">como aparece en tu documento de identificación</span></label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" placeholder="Nombre y apellido completos">
             <div class="err"></div>
           </div>
 
@@ -953,7 +972,7 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
       num.className = "num"; num.textContent = i + 2;
       const inp = document.createElement("input");
       inp.type = "text"; inp.id = "acomp" + (i + 1); inp.maxLength = 80;
-      inp.placeholder = "Nombre completo";
+      inp.placeholder = "Nombre y apellido completos";
       inp.setAttribute("aria-label", "Acompañante " + (i + 1));
       inp.value = prev[i] || "";
       row.append(num, inp);
