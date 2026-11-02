@@ -491,6 +491,36 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
   .cbtn { justify-content: center; width: 100%; }
 }
 
+/* ---------- Networking ---------- */
+.network { padding-block: 20px 110px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.network-head { min-width: 0; }
+.network h2 { font-size: clamp(42px, 5vw, 72px); margin-top: 14px; }
+.network h2 em { color: var(--burgundy); }
+.network-head p { color: var(--muted); font-size: 20px; margin: 22px 0 0; max-width: 46ch; }
+.network-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; min-width: 0; }
+.network-list li {
+  display: grid; grid-template-columns: 52px 1fr; column-gap: 18px; align-items: start;
+  padding: 24px; border-radius: 22px; background: var(--paper); border: 1px solid var(--line);
+}
+.network-list li::before {
+  content: ""; grid-row: span 2; width: 52px; height: 52px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8e4a5d, var(--burgundy)); box-shadow: inset 0 0 0 6px rgba(245,240,230,.18);
+}
+.network-list li:nth-child(2)::before { background: radial-gradient(circle at 35% 35%, #a8737f, #66182f); }
+.network-list li:nth-child(3)::before { background: radial-gradient(circle at 35% 35%, var(--taupe), #74283f); }
+.network-list b { font-size: 21px; }
+.network-list span { color: var(--muted); font-size: 18px; margin-top: 4px; }
+@media (max-width: 1000px) { .network { grid-template-columns: 1fr; gap: 36px; } }
+@media (max-width: 640px) {
+  .network { padding-block: 10px 80px; }
+  .network h2 { font-size: 50px; }
+  .network-head p { font-size: 20px; }
+  .network-list li { grid-template-columns: 44px 1fr; column-gap: 14px; padding: 20px; }
+  .network-list li::before { width: 44px; height: 44px; }
+  .network-list b { font-size: 21px; }
+  .network-list span { font-size: 18px; }
+}
+
 /* ---------- Fixes generales ---------- */
 [hidden] { display: none !important; }
 a, button, label, summary { -webkit-tap-highlight-color: transparent; }
@@ -583,7 +613,7 @@ img { max-width: 100%; }
   <div class="glow cursor" id="cursorGlow" aria-hidden="true"></div>
   <div class="wrap">
     <nav class="nav" aria-label="Principal">
-      <a href="#top" aria-label="The Circle, inicio"><img class="nav-logo" src="logo-bone.png" alt="The Circle" width="61" height="54"></a>
+      <a href="#top" aria-label="The Circle, inicio"><img class="nav-logo" src="logo-bone.svg" alt="The Circle" width="61" height="54"></a>
       <a class="nav-cta" href="#unete">Preinscríbete</a>
     </nav>
     <div class="hero-body">
@@ -611,7 +641,7 @@ img { max-width: 100%; }
             <text><textPath href="#orb">Move · Connect · Belong · The Circle 001 · First Lap · </textPath></text>
           </svg>
         </div>
-        <img src="logo-bone.png" alt="The Circle" width="520" height="458">
+        <img src="logo-bone.svg" alt="The Circle" width="520" height="458">
       </div>
     </div>
   </div>
@@ -620,8 +650,8 @@ img { max-width: 100%; }
 
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>First Lap</span>
-    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>First Lap</span>
+    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>Coffee &amp; healthy drinks</span>
+    <span>Move</span><span>Connect</span><span>Belong</span><span>Come as you are</span><span>Move for good</span><span>Coffee &amp; healthy drinks</span>
   </div>
 </div>
 
@@ -629,12 +659,12 @@ img { max-width: 100%; }
   <section class="manifesto wrap" id="manifiesto" aria-labelledby="m-title">
     <div class="reveal-l">
       <p class="eyebrow b" id="m-title">Move · Connect · Belong</p>
-      <p class="big display">No tienes que ser atleta, llegar acompañada ni conocer a nadie. <em>Come as you are.</em> Leave feeling connected.</p>
+      <p class="big display">No tienes que ser atleta ni llegar acompañado. <em>Come as you are.</em> Leave feeling connected.</p>
       <p class="lead">The Circle es una comunidad que se reúne a moverse, escuchar buena música y conocer gente nueva. Llegas por el plan y te quedas por la gente.</p>
     </div>
     <div class="pillars">
-      <div class="pillar reveal"><h3>Move</h3><p>Corre 5k. Tú eliges el ritmo.</p></div>
-      <div class="pillar reveal"><h3>Connect</h3><p>DJ en vivo, healthy drinks party y gente nueva después del movimiento.</p></div>
+      <div class="pillar reveal"><h3>Move</h3><p>5K en un solo grupo y con la misma música. Tú eliges el ritmo y nosotros te acompañamos.</p></div>
+      <div class="pillar reveal"><h3>Connect</h3><p>DJ en vivo, café, healthy drinks y gente nueva después del movimiento.</p></div>
       <div class="pillar reveal"><h3>Belong</h3><p>Una comunidad a la que vas a querer volver, aunque la actividad cambie.</p></div>
     </div>
   </section>
@@ -649,10 +679,24 @@ img { max-width: 100%; }
     <ol class="timeline">
       <li class="reveal"><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
       <li class="reveal"><time>7:30 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
-      <li class="reveal"><time>7:50 a. m.</time><div><h3>The Movement</h3><p>Correr cerca de 5K. Llegamos todos de vuelta al punto de encuentro a las 9:00.</p></div></li>
-      <li class="reveal"><time>9:00 a. m.</time><div><h3>The Social Session</h3><p>Hora y media de DJ en vivo, café, fotos y estaciones de aliados.</p></div></li>
+      <li class="reveal"><time>7:50 a. m.</time><div><h3>The Movement</h3><p>5K en un solo grupo y con la misma música. Cada quien va a su ritmo y nuestro equipo acompaña el recorrido para que nadie se quede atrás ni solo. Volvemos juntos al punto de encuentro a las 9:00.</p></div></li>
+      <li class="reveal"><time>9:00 a. m.</time><div><h3>The Social Session</h3><p>Hora y media de Coffee &amp; Healthy Drinks Party: DJ en vivo, café, bebidas saludables, fotos y estaciones de aliados.</p></div></li>
       <li class="reveal"><time>10:30 a. m.</time><div><h3>The Last Song</h3><p>Cierre musical, foto de comunidad y anuncio del próximo encuentro.</p></div></li>
     </ol>
+  </section>
+
+
+  <section class="network wrap" aria-labelledby="n-title">
+    <div class="network-head reveal-l">
+      <p class="eyebrow b">Más que un plan de domingo</p>
+      <h2 id="n-title">Aquí encuentras <em>a tu gente.</em></h2>
+      <p>Si llegaste a The Circle es porque algo más te mueve: ganas de cuidarte, de crecer y de rodearte de gente con buena energía. Vas a conocer personas a las que les gusta lo mismo que a ti. Llegas por el plan y te vas con nuevos amigos, contactos y compañeros para entrenar.</p>
+    </div>
+    <ul class="network-list">
+      <li class="reveal"><b>Intereses en común</b><span>Gente que madruga un domingo para moverse, igual que tú.</span></li>
+      <li class="reveal"><b>Networking sin corbata</b><span>Emprendedores, creativos y profesionales que se conocen corriendo y conversan con un café.</span></li>
+      <li class="reveal"><b>Conexiones que siguen</b><span>Lo que empieza en el círculo continúa en el próximo encuentro.</span></li>
+    </ul>
   </section>
 
   <section class="good" aria-labelledby="g-title">
@@ -661,7 +705,7 @@ img { max-width: 100%; }
         <p class="eyebrow">Move for Good</p>
         <h2 id="g-title">Cada vuelta <em>suma.</em></h2>
       </div>
-      <p class="reveal">El primer encuentro tendrá una causa solidaria. Podrás traer una donación voluntaria y al final publicaremos lo que se recogió y a quién llegó. Muy pronto te contamos la fundación aliada.</p>
+      <p class="reveal">El primer encuentro tendrá una causa solidaria. Podrás traer una donación voluntaria y al final publicaremos lo que recogimos entre todos y a quién llegó. Muy pronto te contamos la fundación aliada.</p>
     </div>
   </section>
 
@@ -732,15 +776,6 @@ img { max-width: 100%; }
             <div class="err"></div>
           </div>
 
-          <fieldset class="field" data-f="modalidad">
-            <legend>¿Cómo te quieres mover?</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="modalidad" value="Correr 5K"><span>Correr ~5K</span></label>
-              <label class="chip"><input type="radio" name="modalidad" value="Caminar"><span>Caminar</span></label>
-              <label class="chip"><input type="radio" name="modalidad" value="Aún no sé"><span>Aún no sé</span></label>
-            </div>
-            <div class="err"></div>
-          </fieldset>
 
           <fieldset class="field" data-f="pago">
             <legend>¿Cómo prefieres pagar cuando abra la preventa? <span class="hint">puedes marcar varias</span></legend>
@@ -803,7 +838,7 @@ img { max-width: 100%; }
       </details>
       <details class="reveal">
         <summary>No corro. ¿Igual puedo ir?</summary>
-        <p>Claro. Habrá un grupo de caminata y la parte social es para todos. Aquí nadie compite.</p>
+        <p>Claro. Corremos todos juntos, pero cada quien a su ritmo: puedes trotar suave o caminar a ratos. Nuestro equipo acompaña el recorrido para que nadie se quede atrás ni solo. Aquí nadie compite.</p>
       </details>
       <details class="reveal">
         <summary>¿Puedo ir sola o solo?</summary>
@@ -827,7 +862,7 @@ img { max-width: 100%; }
 
 <footer>
   <div class="wrap">
-    <img class="foot-logo reveal" src="logo-bone.png" alt="The Circle" width="150" height="132">
+    <img class="foot-logo reveal" src="logo-bone.svg" alt="The Circle" width="150" height="132">
     <p class="tag">Come as you are.</p>
     <small>Bucaramanga · Wellness, movement &amp; community</small>
   </div>
@@ -952,7 +987,7 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
       correo: clean(fd.get("correo") || "").toLowerCase(),
       cantidad: qty,
       acompanantes: [...compList.querySelectorAll("input")].map(i => clean(i.value)),
-      modalidad: fd.get("modalidad") || "",
+      modalidad: "Correr 5K",
       pago: fd.getAll("pago"),
       fuente: fd.get("fuente") || "",
       datos: !!fd.get("datos"),
@@ -969,7 +1004,6 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     check("whatsapp", digits.length >= 10 && digits.length <= 13, "Escribe un número de WhatsApp válido, por ejemplo 300 123 4567.");
     check("correo", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.correo), "Revisa el correo, parece incompleto.");
     check("acompanantes", d.acompanantes.every(n => n.length >= 3), "Escribe el nombre de cada acompañante.");
-    check("modalidad", !!d.modalidad, "Elige cómo te quieres mover.");
     check("pago", d.pago.length > 0, "Elige al menos un medio de pago.");
     check("datos", d.datos, "Necesitamos tu autorización para guardar la inscripción.");
     if (!ok) {
@@ -1016,7 +1050,7 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     const area = document.getElementById("formArea");
     const box = document.createElement("div");
     box.className = "success"; box.setAttribute("role", "status");
-    const img = document.createElement("img"); img.src = "logo-bone.png"; img.alt = "";
+    const img = document.createElement("img"); img.src = "logo-bone.svg"; img.alt = "";
     const hh = document.createElement("h3"); hh.textContent = "You belong here.";
     const p = document.createElement("p");
     const first = d.nombre.split(" ")[0];
